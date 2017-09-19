@@ -17,6 +17,7 @@ class Contact:
 		linkedIn = {}
 		""".format(self.name, self.phone, self.email, self.birthday, self.linkedIn)
 
+#getting contact input from users
 name = input("Name: ")
 phone = input("Phone number: ")
 email = input("Email address: ")
@@ -30,10 +31,12 @@ class ContactManager:
 	def __init__ (self, contacts = []):
 		self.contacts = contacts
 
+#add contacts
 	def add_contact(self, contact):
-		self.contacts.append(contact)
+		self.contacts.append(contact)#append adds content
 		the_manager.displayContacts()
 
+#remove contacts
 	def remove_contact(self, phone):
 		for contact in self.contacts:
 			if contact.phone == phone:
@@ -43,6 +46,7 @@ class ContactManager:
 		else:
 			return "Contact doesn't exist"
 
+#search contacts
 	def search_contact(self, name):
 		for contact in self.contacts:
 			if contact.name == name:
@@ -57,6 +61,7 @@ class ContactManager:
 if __name__ == '__main__':
 	the_manager = ContactManager()
 
+#call
 newContact = ContactManager()
 newContact.add_contact(Contact(name = name, phone = phone, email = email, birthday = birthday, linkedIn = linkedIn))
 remove = int(input("Number to be deleted."))
