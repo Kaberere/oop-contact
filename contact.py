@@ -17,11 +17,11 @@ class Contact:
 		linkedIn = {}
 		""".format(self.name, self.phone, self.email, self.birthday, self.linkedIn)
 
-# name = input("Name: ")
-# phone = input("Phone number: ")
-# email = input("Email address: ")
-# birthday = input("DOB: ")
-# linkedIn = input("linkedIn URL: ")
+name = input("Name: ")
+phone = input("Phone number: ")
+email = input("Email address: ")
+birthday = input("DOB: ")
+linkedIn = input("linkedIn URL: ")
 
 # newContact = Contact(name, phone, email, birthday, linkedIn)
 # print(newContact)
@@ -30,11 +30,6 @@ class ContactManager:
 	def __init__ (self, contacts = []):
 		self.contacts = contacts
 
-	def __repr__ (self):
-		contact_str = ""
-		for contact in self.contacts:
-			contact_str += contact + "\n"
-			return contact_str
 	def add_contact(self, contact):
 		self.contacts.append(contact)
 		the_manager.displayContacts()
@@ -42,7 +37,7 @@ class ContactManager:
 	def remove_contact(self, contact):
 		self.contacts.remove(contact)
 		for contact in self.contacts:
-			if contact.phone == rm_phone:
+			if contact.phone == remove_phone:
 				self.contacts.remove(contact)
 				print("Success")
 				the_manager.displayContacts()
@@ -61,7 +56,19 @@ class ContactManager:
 	def displayContacts(self):
 		for contact in self.contacts:
 			print(contact)
-			
+
+if __name__ == '__main__':
+	the_manager = ContactManager()
+
+newContact = ContactManager()
+newContact.add_contact(Contact(name = name, phone = phone, email = email, birthday = birthday, linkedIn = linkedIn))
+remove = input("Contact number of the number you would like to delete.")
+newContact.remove_contact(remove)
+search = input("What name would you like to search for?")
+newContact.search_contact(search)
+
+
+
 
 
 
