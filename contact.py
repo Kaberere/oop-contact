@@ -51,7 +51,7 @@ if __name__ == "__main__":
 	new_contacts = Contact(name="Eve")
 	new_contacts.add_contact(new_contacts)
 	new_contacts.search_contact(Contact(name = "Eve"))
-	new_contacts.remove_contact(" ")
+	new_contacts.remove_contact("")
 
 print(new_contacts)
 
