@@ -37,23 +37,31 @@ class ContactManager:
 			return contact_str
 	def add_contact(self, contact):
 		self.contacts.append(contact)
+		the_manager.displayContacts()
+
 	def remove_contact(self, contact):
-		self.contacts.append(contact)
-	def search_contact(self, contact):
+		self.contacts.remove(contact)
 		for contact in self.contacts:
-			if contact.name == name:
-				self.contacts.search(contact)
+			if contact.phone == rm_phone:
+				self.contacts.remove(contact)
+				print("Success")
+				the_manager.displayContacts()
+			else:
+				return "Contact faulty"
+
+	def search_contact(self):
+		search_name = input("Name: ")
+		print("Contact found for: ")
+		for contact in self.contacts:
+			if search_name in contact.name:
 				return contact
-			return None
+			else:
+				return "Contact not found."
 
-if __name__ == "__main__":
-	new_contacts = ContactManager()
-	new_contacts = Contact(name="Eve")
-	new_contacts.add_contact(new_contacts)
-	new_contacts.search_contact(Contact(name = "Eve"))
-	new_contacts.remove_contact("")
-
-print(new_contacts)
+	def displayContacts(self):
+		for contact in self.contacts:
+			print(contact)
+			
 
 
 
