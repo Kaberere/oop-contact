@@ -35,22 +35,18 @@ class ContactManager:
 		the_manager.displayContacts()
 
 	def remove_contact(self, contact):
-		delete_phone = input("Number to be deleted")
 		for contact in self.contacts:
-			if contact.phone == delete_phone:
 				self.contacts.remove(contact)
 				print("Success")
 				the_manager.displayContacts()
-			else:
+		else:
 				return "Contact faulty"
 
-	def search_contact(self):
-		search_name = input("Name: ")
-		print("Contact found for: ")
+	def search_contact(self, contact):
 		for contact in self.contacts:
-			if search_name in contact.name:
+			self.contacts.search(contact)
 				return contact
-			else:
+		else:
 				return "Contact not found."
 
 	def displayContacts(self):
@@ -62,7 +58,8 @@ if __name__ == '__main__':
 
 newContact = ContactManager()
 newContact.add_contact(Contact(name = name, phone = phone, email = email, birthday = birthday, linkedIn = linkedIn))
-newContact.remove_contact(delete_phone)
+remove = input("Number to be deleted.")
+newContact.remove_contact(remove)
 search = input("What name would you like to search for?")
 newContact.search_contact(search)
 
