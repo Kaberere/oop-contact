@@ -35,9 +35,9 @@ class ContactManager:
 		the_manager.displayContacts()
 
 	def remove_contact(self, contact):
-		self.contacts.remove(contact)
+		delete_phone = input("Number to be deleted")
 		for contact in self.contacts:
-			if contact.phone == remove_phone:
+			if contact.phone == delete_phone:
 				self.contacts.remove(contact)
 				print("Success")
 				the_manager.displayContacts()
@@ -62,8 +62,7 @@ if __name__ == '__main__':
 
 newContact = ContactManager()
 newContact.add_contact(Contact(name = name, phone = phone, email = email, birthday = birthday, linkedIn = linkedIn))
-remove = input("Contact number of the number you would like to delete.")
-newContact.remove_contact(remove)
+newContact.remove_contact(delete_phone)
 search = input("What name would you like to search for?")
 newContact.search_contact(search)
 
