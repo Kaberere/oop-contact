@@ -24,9 +24,6 @@ email = input("Email address: ")
 birthday = input("DOB: ")
 linkedIn = input("linkedIn URL: ")
 
-# newContact = Contact(name, phone, email, birthday, linkedIn)
-# print(newContact)
-
 class ContactManager:
 	def __init__ (self, contacts = []):
 		self.contacts = contacts
