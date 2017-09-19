@@ -1,3 +1,4 @@
+import csv
 class Contact:
 
 	def __init__ (self, name, phone, email, birthday, linkedIn):
@@ -31,7 +32,7 @@ class ContactManager:
 #add contacts
 	def add_contact(self, contact):
 		self.contacts.append(contact)#append adds content
-		the_manager.displayContacts()
+		the_manager.display_contacts()
 
 #remove contacts
 	def remove_contact(self, phone):
@@ -39,7 +40,7 @@ class ContactManager:
 			if contact.phone == phone:
 				self.contacts.remove(contact)
 				return "Success"
-				the_manager.displayContacts()
+				the_manager.display_contacts()
 		else:
 			return "Contact doesn't exist"
 
@@ -51,7 +52,7 @@ class ContactManager:
 		else:
 			return "Contact not found."
 
-	def displayContacts(self):
+	def display_contacts(self):
 		for contact in self.contacts:
 			print(contact)
 
@@ -65,7 +66,6 @@ remove = int(input("Number to be deleted."))
 print(newContact.remove_contact(remove))
 search = input("What name would you like to search for?")
 print(newContact.search_contact(search))
-
 
 
 
